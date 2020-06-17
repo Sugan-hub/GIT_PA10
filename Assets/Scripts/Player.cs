@@ -9,13 +9,14 @@ public class Player : MonoBehaviour
     private Animation thisAnimation;
     public float Speed = 2f;
 
-    public int scorePoint = 10;
+    public int score;
     public Text ScoreText;
 
     void Start()
     {
         thisAnimation = GetComponent<Animation>();
         thisAnimation["Flap_Legacy"].speed = 3;
+
     }
 
     void Update()
@@ -41,7 +42,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            scorePoint += 10;
+            score += 10;
         }
     }
+
 }
