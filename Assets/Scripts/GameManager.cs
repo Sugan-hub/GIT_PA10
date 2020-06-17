@@ -38,15 +38,11 @@ public class GameManager : MonoBehaviour
         Txt_Score.text = "SCORE : 0";
     }
 
-    public void GameOver()
+    public void Restart()
     {
         Time.timeScale = 0;
         Txt_Message.text = "GAMEOVER! \nPRESS ENTER TO RESTART GAME.";
         Txt_Message.color = Color.red;
-    }
-
-    public void Restart()
-    {
         SceneManager.LoadScene(0);
     }
 

@@ -31,14 +31,10 @@ public class Player : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.name.Equals("Obstacle") || gameObject.transform.position.y >= -45)
+        if (collision.gameObject.name.Equals("Obstacle") || collision.gameObject.name.Equals("Cube"))
         {
 
             SceneManager.LoadScene(1);
         }
     }
-    //public void AddScore(int value)
-    //{
-    //    Score += value;
-    //}
 }
