@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class Player : MonoBehaviour
 
     public int JumpSpeed = 30;
     Rigidbody rb;
+
+    public int Score;
+    public Text ScoreText;
 
     void Start()
     {
@@ -33,7 +38,7 @@ public class Player : MonoBehaviour
         //GameOver
         else if(transform.position.y <= -4.3)
         {
-            GameManager.thisManager.GameOver();
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -41,7 +46,16 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.tag == "Obstacle")
         {
-            GameManager.thisManager.GameOver();
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Score++;
+            ScoreText.text = "SCORE : " + Score;
         }
     }
 }
