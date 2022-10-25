@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Animation thisAnimation;
+    public float Speed;
 
     void Start()
     {
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position = transform.up * Speed * Time.deltaTime;
+        }
             thisAnimation.Play();
     }
 }
