@@ -22,18 +22,13 @@ public class GameManager : MonoBehaviour
             StartGame();
     }
 
-    public void UpdateScore(int value)
-    {
-        Score += value;
-        Txt_Score.text = "SCORE : " + Score;
-    }
+
 
     private void StartGame()
     {
         Score = 0;
         Time.timeScale = 1;
         Txt_Message.text = "";
-        Txt_Score.text = "SCORE : 0";
     }
 
     public void GameOver()
