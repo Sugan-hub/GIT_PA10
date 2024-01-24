@@ -38,11 +38,8 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("LoseScene");
         }
 
-        if (collision.gameObject.tag == "obstacle")
-        {
-            score++;
-            Scoretext.text = "Score : " + score;
-        }
+
+    }
 
 
 
